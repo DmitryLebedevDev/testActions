@@ -5,11 +5,16 @@ on:
         description: 'text for notification'
         required: true
         type: string
+      key:
+        description: 'key for send'
+        required: true
+        type: string
 
 jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
-      - run: curl "https://build-notificator.ru/?text=$TEXT"
+      - run: curl "https://build-notificator.ru/?text=$TEXT&key=$KEY"
         env:
           TEXT: ${{ inputs.text }}
+          KEY: ${{ inputs.key }}
