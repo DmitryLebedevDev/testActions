@@ -10,6 +10,6 @@ jobs:
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
-      - run: curl "https://build-notificator.ru/?text=$TEXT"
+      - run: curl "https://build-notificator.ru/?text=test"
         env:
           TEXT: ${{ inputs.text }}
